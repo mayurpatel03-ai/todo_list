@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-tf-canvas: #faf8ff;
+  --color-tf-surface: #ffffff;
+  --color-tf-surface-low: #f2f3ff;
+  --color-tf-surface-mid: #eaedff;
+  --color-tf-surface-high: #e2e7ff;
+  --color-tf-ink: #131b2e;
+  --color-tf-ink-secondary: #334155;
+  --color-tf-ink-muted: #64748b;
+  --color-tf-ink-subtle: #94a3b8;
+  --color-tf-border: #e2e8f0;
+  --color-tf-border-strong: #cbd5e1;
+
+  --color-tf-primary: #4f46e5;
+  --color-tf-primary-deep: #3525cd;
+  --color-tf-primary-hover: #4338ca;
+  --color-tf-primary-tint: #e2dfff;
+
+  --color-tf-emerald: #10b981;
+  --color-tf-amber: #f59e0b;
+  --color-tf-rose: #ef4444;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #faf8ff;
+    color: #131b2e;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.shadow-tf-1 {
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
+}
+
+.shadow-tf-2 {
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+}
+
+.shadow-tf-3 {
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.06);
+}
+
+.tf-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+@keyframes check-bounce {
+  0% {
+    transform: scale(0.75);
+  }
+  60% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-check-bounce {
+  animation: check-bounce 150ms ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-check-bounce {
+    animation: none;
+  }
+}
